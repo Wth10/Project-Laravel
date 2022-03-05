@@ -16,8 +16,7 @@
 
     <!--  img  -->
     <link rel="icon" href="{{ URL::asset('/site/assets/img/favicon.png') }}" type="text/css">
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ URL::asset('/site/assets/img/apple-icon.png') }}"
-        type="text/css">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ URL::asset('/site/assets/img/apple-icon.png') }}" type="text/css">
 </head>
 
 <body class="">
@@ -84,8 +83,7 @@
                     </div>
                 </div>
             </nav>
-            <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog"
-                aria-labelledby="searchModal" aria-hidden="true">
+            <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -115,56 +113,43 @@
                                         <div class="col-md-10">
                                             <div class="form-group">
                                                 <label>Nome</label>
-                                                <input name="nome" type="text"
-                                                    class="form-control @error('nome') is-invalid @enderror"
-                                                    value="{{ old('nome') }}" require>
+                                                <input name="nome" type="text" class="form-control @error('nome') is-invalid @enderror" value="{{ old('nome') }}" require>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>Nota 1º Unidade:</label>
-                                                <input name="nota_1_unidade" type="number"
-                                                    class="form-control  @error('nota_1_unidade') is-invalid @enderror"
-                                                    value="{{ old('nota_1_unidade') }}" require>
+                                                <input name="nota_1_unidade" type="number" class="form-control  @error('nota_1_unidade') is-invalid @enderror" value="{{ old('nota_1_unidade') }}" require>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label>Nota 2º Unidade:</label>
-                                                <input name="nota_2_unidade" type="number"
-                                                    class="form-control @error('nota_2_unidade') is-invalid @enderror"
-                                                    value="{{ old('nota_2_unidade') }}" require>
+                                                <input name="nota_2_unidade" type="number" class="form-control @error('nota_2_unidade') is-invalid @enderror" value="{{ old('nota_2_unidade') }}" require>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label>Nota 3º Unidade:</label>
-                                                <input name="nota_3_unidade" type="number"
-                                                    class="form-control @error('nota_3_unidade') is-invalid @enderror"
-                                                    value="{{ old('nota_3_unidade') }}" require>
+                                                <input name="nota_3_unidade" type="number" class="form-control @error('nota_3_unidade') is-invalid @enderror" value="{{ old('nota_3_unidade') }}" require>
                                             </div>
                                         </div>
                                         <div class="col-md-5">
                                             <div class="form-group">
                                                 <label>Sala</label>
-                                                <input name="sala" type="text"
-                                                    class="form-control  @error('sala') is-invalid @enderror"
-                                                    value="{{ old('sala') }}" require>
+                                                <input name="sala" type="text" class="form-control  @error('sala') is-invalid @enderror" value="{{ old('sala') }}" require>
                                             </div>
                                         </div>
                                         <div class="col-md-5">
                                             <div class="form-group">
                                                 <label>Turno</label>
-                                                <input name="turno" type="text"
-                                                    class="form-control  @error('turno') is-invalid @enderror"
-                                                    value="{{ old('turno') }}" require>
+                                                <input name="turno" type="text" class="form-control  @error('turno') is-invalid @enderror" value="{{ old('turno') }}" require>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="card-footer">
                                         <button class="btn btn-fill btn-primary">Cadastrar</button>
-                                        <a href="{{ route('dashboard') }}"><button type="button"
-                                                class="btn btn-primary">Voltar</button></a>
+                                        <a href="{{ route('dashboard') }}"><button type="button" class="btn btn-primary">Voltar</button></a>
                                     </div>
                                 </form>
                             </div>

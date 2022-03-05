@@ -10,24 +10,12 @@ use App\Http\Requests\StoreUpdateBoletin;
 
 class BoletinController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
-    public function search(Request $request)
+    public function search()
     {
-        $search = $request->input('search');
-        $boletins = DB::table('boletins')->where('nome', 'like', '%'.$search.'%')->paginate();
-        return view('dashboard', ['boletins' => $boletins]); 
-
-        if(!empty($search)) {
-            $boletins = School::where('nome', 'LIKE', '%'.$search.'%');
-        }
-
+        $search = $_GET['search'];
         
-
+        $boletins = boletin::where('nome', 'LIKE', '%'.$search.'%')->get();
+        return view('dashboard', ['boletins' => $boletins]);
     }
 
     public function index()

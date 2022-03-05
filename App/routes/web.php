@@ -9,25 +9,35 @@
     Route::get('/', [PageController::class, 'welcome'])->name( name: 'welcome');
 
     /*--------------------------------------------------------------------------
-    | Web Routes Profile
+    | Routes Profile
     --------------------------------------------------------------------------*/
     Route::group( attributes: ['middleware' => 'auth'], routes: function(){
         Route::get( uri: '/profile', action: [PageController::class, 'profile'])->name( name: 'profile');
         Route::put( uri: '', action: [ProfileUpdate::class, 'update'])->name( name: 'profile.update');
-        
     });
 
+
+    /*--------------------------------------------------------------------------
+    | Pag Login
+    --------------------------------------------------------------------------*/
     Route::group( attributes: ['middleware' => 'auth'], routes: function(){
         Route::get( uri: '/profile', action: [PageController::class, 'profile'])->name( name: 'profile');
         Route::get( uri: '/register', action: [PageController::class, 'register'])->name( name: 'register');
-        Route::get( uri: '/login', action: [PageController::class, 'login'])->name( name: 'login');
-        
+        Route::get( uri: '/login', action: [PageController::class, 'login'])->name( name: 'login');   
     });
 
+
+    /*--------------------------------------------------------------------------
+    | Routes Search
+    --------------------------------------------------------------------------*/
+    Route::group( attributes: ['middleware' => 'auth'], routes: function(){
+        Route::get( uri: '/query', action: [BoletinController::class, 'search'])->name( name: 'search');  
+    });
+
+    
     /*--------------------------------------------------------------------------
     | Web Routes Boletin
     --------------------------------------------------------------------------*/
-
     Route::group( attributes: ['middleware' => 'auth'], routes: function(){
         Route::get( uri: '/dashboard', action: [BoletinController::class, 'index'])->name( name: 'dashboard');
         Route::get( uri: '/create', action: [BoletinController::class, 'create'])->name( name: 'create');
@@ -36,8 +46,6 @@
         Route::get( uri: '/{id}', action: [BoletinController::class, 'destroy'])->name( name: 'destroy');
         Route::get( uri: '/edit/{id}', action: [BoletinController::class, 'edit'])->name( name: 'edit');
         Route::put( uri: '/{id}', action: [BoletinController::class, 'update'])->name( name: 'update');
-        Route::get('search', 'BoletinController@search')->name('search');
-
     });
     
     require __DIR__.'/auth.php';

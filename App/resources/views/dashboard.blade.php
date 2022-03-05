@@ -108,13 +108,11 @@
                             <div class="card-body">
                                 <div class="chart-area">
                                     <div class="card card-nav-tabs">
-                                        <div class="card-header card-header-success">
-                                            Quote
-                                        </div>
+                                        <div class="card-header card-header-success"> Sabedoria </div>
                                         <div class="card-body">
                                             <blockquote class="blockquote mb-0">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                                                <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                                                <p>Não espere por uma crise para descobrir o que é importante em sua vida.</p>
+                                                <footer class="blockquote-footer">Platão</footer>
                                             </blockquote>
                                         </div>
                                     </div>
@@ -133,9 +131,9 @@
                 </div>
                 @endif
 
-                <form action="dasboard" method="GET" class="form-inline justify-content-center">
+                <form action="{{ route('search') }}" method="GET" class="form-inline justify-content-center">
                     <div class="form-group no-border ">
-                        <input type="search" name="search" class="form-control col-md-200" placeholder="Pesquisar">
+                        <input type="search" name="search" class="form-control" placeholder="Pesquisar" require>
                         <button class="btn btn-link btn-icon btn-round">
                             <i class="tim-icons icon-zoom-split"></i>
                         </button>
