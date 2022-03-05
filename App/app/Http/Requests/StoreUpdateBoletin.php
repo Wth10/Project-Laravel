@@ -29,8 +29,7 @@ class StoreUpdateBoletin extends FormRequest
             'nota_2_unidade' =>  ['required', ' numeric'],
             'nota_3_unidade' =>  ['required', ' numeric'],
             'sala'           =>  ['required', 'string'],
-            'turno'          =>  ['required', 'string'],
-            'search'         =>  ['required', 'string']
+            'turno'          =>  ['required', 'string']
         ];
     }
 }

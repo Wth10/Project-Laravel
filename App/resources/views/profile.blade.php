@@ -98,14 +98,16 @@
             </div>
             <!-- End Navbar -->
             <div class="content">
+
                 @if(session('status'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <p>{{session('status')}}</p>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                <div class="alert alert-success">
+                    <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                        <i class="tim-icons icon-simple-remove"></i>
                     </button>
+                    <span>{{session('status')}}</span>
                 </div>
                 @endif
+
                 <div class="row">
                     <div class="col-md-10">
                         <div class="card">
