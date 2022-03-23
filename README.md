@@ -15,8 +15,10 @@ PROPOSTAS DO PROJETO:
 
 DEPEDENCIA:
 
+- [ ] NENHUMA...
 - [ ]
 
 POSSÍVIES ALTERAÇÕES:
 
+- [ ] NENHUMA...
 - [ ]
