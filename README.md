@@ -2,23 +2,24 @@
 
 ---
 
-PROJETO COMPLETO. O PRINCIPAL OBJETIVO DELE É DEIXAR O `CRUD` TOTALMENTE FUNCIONAL. ONDE PROFESSORES PODERAM CADASTRAR SEUS ALUNOS COM SUAS RECEPTIVAS NOTAS DAS UNIDADES ESCOLAR
+Complete design. His main goal is to make `crud` fully functional. Where teachers can register their students with their receptive grades of school units.
 
-PROPOSTAS DO PROJETO:
+Project proposals:
 
-- [x] CADASTRAR ALUNO.
-- [x] ALTERAR ALUNO.
-- [x] EXCLUIR ALUNO.
-- [x] CRIAR TELA DE LOGIN.
-- [x] MUDAR DESIGN DO SISTEMA.
-- [x] FAZER LOGIN COM VERIFICAÇÃO.
+- [x] Register student.
+- [x] Change student.
+- [x] Delete student.
+- [x] Create login screen.
+- [x] Change system design.
+- [x] Login with verification.
 
-DEPEDENCIA:
 
-- [ ] NENHUMA...
-- [ ] NENHUMA...
+comments:
 
-POSSÍVIES ALTERAÇÕES:
+- [ ] Hack security note
+- [ ] None...
 
-- [x] FAZER SEARCH
-- [ ] NENHUMA...
+Possible changes:
+
+- [x] Make search
+- [ ] Make pagination
