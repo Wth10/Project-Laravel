@@ -1,4 +1,4 @@
-### PROJETO ESCOLA COM CRUD
+### School project with crud
 
 ---
 
@@ -12,7 +12,6 @@ Project proposals:
 - [x] Create login screen.
 - [x] Change system design.
 - [x] Login with verification.
-
 
 comments:
 
