@@ -6,19 +6,20 @@ Complete design. His main goal is to make `crud` fully functional. Where teacher
 
 Project proposals:
 
-- [x] Register student.
-- [x] Change student.
-- [x] Delete student.
-- [x] Create login screen.
-- [x] Change system design.
-- [x] Login with verification.
+- [x] Register student ✅
+- [x] Change student ✅
+- [x] Delete student ✅
+- [x] Create login screen ✅
+- [x] Change system design ✅
+- [x] Login with verification ✅
 
 comments:
 
-- [ ] Hack security note
+- [ ] None...
 - [ ] None...
 
 Possible changes:
 
-- [x] Make search
-- [ ] Make pagination
+- [x] Make search ✅
+- [ ] Make pagination 🟨
+- [ ] Register Matery 🟧
