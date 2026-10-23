@@ -49,9 +49,10 @@
                 <h5 class="title">Excluir Aluno</h5>
               </div>
               <div class="card-body">
-                <form action="" method="POST">
+                <form action="{{ route('destroy', ['boletin' => $boletins->id]) }}" method="POST">
                   <div class="row">
                     @csrf
+                    @method('DELETE')
                     <div class="form-group col-md-9">
                       <label>Nome</label>
                       <input name="Nome" type="text" class="form-control" value="{{ $boletins->nome }}" readonly>
@@ -78,33 +79,13 @@
                     </div>
                     
                   </div>
-                </form>
-                <div class="card-footer">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                  <div class="card-footer">
+                    <button type="submit" class="btn btn-danger">
                       Excluir
                     </button>
-                        <!-- Modal -->
-                      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">AVISO:</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                  <i class="tim-icons icon-simple-remove"></i>
-                                </button>
-                          </div>
-                          <div class="modal-body">
-                            TEM CERTEZA QUE DESEJA REALMENTE EXCLUIR ESSE ALUNO?
-                          </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                              <a href="{{ route('destroy', ['id'=>$boletins->id]) }}" class="shiny-button" id="Submit" onClick="SubmitForm();"><button type="button" class="btn btn-danger">Excluir</button></a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    <a href="{{ route('dashboard') }}"><button type="submit" class="btn btn-fill btn-primary">Voltar</button></a>
-                  </div> 
+                    <a href="{{ route('dashboard') }}"><button type="button" class="btn btn-fill btn-primary">Voltar</button></a>
+                  </div>
+                </form>
               </div>  
             </div>
           </div>

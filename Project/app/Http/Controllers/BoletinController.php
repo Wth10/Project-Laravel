@@ -4,17 +4,27 @@ namespace App\Http\Controllers;
 
 use App\Models\boletin;
 use App\Http\Controllers\Controller;
-use App\Http\Requests;
 use App\Http\Requests\StoreUpdateBoletin;
+use Illuminate\Http\Request;
 
 
 class BoletinController extends Controller
 {
-    public function search()
+    public function search(Request $request)
     {
-        $search = $_GET['search'];
-        
-        $boletins = boletin::where('nome', 'LIKE', '%'.$search.'%')->get();
+        $data = $request->validate([
+            'search' => ['nullable', 'string', 'max:100'],
+        ]);
+
+        $search = trim($data['search'] ?? '');
+
+        $boletins = boletin::query()
+            ->when($search !== '', function ($query) use ($search) {
+                $query->where('nome', 'LIKE', '%' . $search . '%');
+            })
+            ->limit(100)
+            ->get();
+
         return view('dashboard', ['boletins' => $boletins]);
     }
 
@@ -95,8 +105,8 @@ class BoletinController extends Controller
      */
     public function update($id, StoreUpdateBoletin $request)
     {
-        $boletins = boletin::where('id', $id)->first();
-        $boletins->update($request->all());
+        $boletins = boletin::findOrFail($id);
+        $boletins->update($request->validated());
         
         return redirect()->action([BoletinController::class, 'index'])->with('status', 'Alteração Feita Com Sucesso!');
         
@@ -108,10 +118,9 @@ class BoletinController extends Controller
      * @param  \App\Models\boletin  $boletin
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(boletin $boletin)
     {   
-        $boletins = boletin::findOrFail($id);
-        $boletins->delete();
+        $boletin->delete();
 
         return redirect()->action([BoletinController::class, 'index'])->with('status', 'Aluno Excluido Com Sucesso!');
     }

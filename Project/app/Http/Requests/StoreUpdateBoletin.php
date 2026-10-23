@@ -25,11 +25,11 @@ class StoreUpdateBoletin extends FormRequest
     {
         return [
             'nome'           =>  ['required', 'string', 'min:3','max:150'],
-            'nota_1_unidade' =>  ['required', 'numeric'],
-            'nota_2_unidade' =>  ['required', ' numeric'],
-            'nota_3_unidade' =>  ['required', ' numeric'],
-            'sala'           =>  ['required', 'string'],
-            'turno'          =>  ['required', 'string']
+            'nota_1_unidade' =>  ['required', 'numeric', 'min:0', 'max:10'],
+            'nota_2_unidade' =>  ['required', 'numeric', 'min:0', 'max:10'],
+            'nota_3_unidade' =>  ['required', 'numeric', 'min:0', 'max:10'],
+            'sala'           =>  ['required', 'string', 'min:1', 'max:20'],
+            'turno'          =>  ['required', 'string', 'in:matutino,vespertino,noturno']
         ];
     }
 }
