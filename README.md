@@ -23,3 +23,12 @@ Possible changes:
 - [x] Make search ✅
 - [ ] Make pagination 🟨
 - [ ] Register Matery 🟧
+
+## Production configuration
+
+For production deployments, do not run with debug mode enabled.
+
+- `APP_ENV=production`
+- `APP_DEBUG=false`
+
+Keep real credentials only in the server `.env` file (never commit secrets to the repository).

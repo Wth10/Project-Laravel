@@ -4,7 +4,6 @@
     use App\Http\Controllers\PageController;
     use App\Http\Controllers\ProfileUpdate;
     use Illuminate\Support\Facades\Route;
-    use App\Models\boletin;
 
     Route::get('/', [PageController::class, 'welcome'])->name( name: 'welcome');
 
@@ -43,7 +42,7 @@
         Route::get( uri: '/create', action: [BoletinController::class, 'create'])->name( name: 'create');
         Route::post( uri: '/create', action: [BoletinController::class, 'store'])->name( name: 'registro_aluno');
         Route::get( uri: '/Pagdestroy/{id}', action: [BoletinController::class, 'show'])->name( name: 'Pagdestroy');
-        Route::get( uri: '/{id}', action: [BoletinController::class, 'destroy'])->name( name: 'destroy');
+        Route::delete( uri: '/{boletin}', action: [BoletinController::class, 'destroy'])->name( name: 'destroy');
         Route::get( uri: '/edit/{id}', action: [BoletinController::class, 'edit'])->name( name: 'edit');
         Route::put( uri: '/{id}', action: [BoletinController::class, 'update'])->name( name: 'update');
     });

@@ -17,7 +17,6 @@ class boletin extends Model
     ];
 
     protected $fillable = [
-        'id', 
         'nome', 
         'nota_1_unidade', 
         'nota_2_unidade', 

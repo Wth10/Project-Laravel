@@ -3,17 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
 
 class ProfileUpdate extends Controller
 {
     
     public function update(Request $request)
     {
-        auth()->user()->update($request->only(['name', 'email']));
+        $user = $request->user();
 
-        if($request->input( key: 'password')){
-            auth()->user()->update([
-                'password' => bcrypt ( value: $request->input( key: 'password'))
+        $data = $request->validate([
+            'name' => ['required', 'string', 'min:3', 'max:255'],
+            'email' => ['required', 'email', 'max:255', Rule::unique('users', 'email')->ignore($user->id)],
+            'password' => ['nullable', 'string', 'confirmed', 'min:8'],
+        ]);
+
+        $user->update([
+            'name' => $data['name'],
+            'email' => $data['email'],
+        ]);
+
+        if (!empty($data['password'])) {
+            $user->update([
+                'password' => Hash::make($data['password']),
             ]);
         }
 
